@@ -30,35 +30,8 @@ npm run build    # type-check + production build to dist/
 npm run preview  # serve the production build locally
 ```
 
-## Deploying to Cloudflare Pages
+## License
 
-This is a fully static site — the entire `dist/` output can be served as-is,
-no server/functions needed.
-
-1. Push this repo to GitHub (or GitLab).
-2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git**,
-   select this repo.
-3. Build settings:
-   - Framework preset: `Vite`
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-4. Deploy. Cloudflare will give you a `*.pages.dev` URL first.
-5. Add the custom subdomain: in the Pages project → **Custom domains** → add
-   `unlockpdf.imhx.top` (requires `imhx.top` to already be on Cloudflare DNS).
-
-Alternatively, deploy directly from the CLI without connecting Git:
-
-```bash
-npm run build
-npx wrangler pages deploy dist --project-name=unlockpdf
-```
-
-### Notes
-
-- `public/_headers` sets long-lived immutable caching for hashed assets and the
-  `.wasm` binary (~10 MB uncompressed; Cloudflare serves it Brotli/gzip-compressed
-  in transit, so real transfer size is a few MB).
-- The MuPDF WASM library is licensed AGPL-3.0-or-later. Since this app ships the
-  library to the browser (not just uses it server-side), keeping the source of
-  this repo publicly available satisfies the AGPL's network-use clause — link to
-  the repo somewhere on the deployed site (e.g. footer) once it's public.
+The MuPDF WASM library (`mupdf` npm package) is licensed AGPL-3.0-or-later. This
+repo is public to satisfy the AGPL's network-use clause, and the deployed site
+links back to it in the footer.

@@ -170,7 +170,17 @@ export default function App() {
         )}
 
         <footer className="mt-16 text-center text-xs text-neutral-400">
-          Files are processed entirely in your browser using WebAssembly — nothing is sent to a server.
+          <p>Files are processed entirely in your browser using WebAssembly — nothing is sent to a server.</p>
+          <p className="mt-1">
+            <a
+              href="https://github.com/nogoodusername/unlock-pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-accent"
+            >
+              Source on GitHub
+            </a>
+          </p>
         </footer>
       </div>
     </div>
