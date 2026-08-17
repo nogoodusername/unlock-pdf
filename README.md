@@ -32,6 +32,8 @@ npm run preview  # serve the production build locally
 
 ## License
 
-The MuPDF WASM library (`mupdf` npm package) is licensed AGPL-3.0-or-later. This
-repo is public to satisfy the AGPL's network-use clause, and the deployed site
-links back to it in the footer.
+This project is licensed under the [GNU AGPL-3.0-or-later](LICENSE.md), the
+same license as the MuPDF WASM library (`mupdf` npm package) it embeds. Since
+the app ships that library to the browser, this repo stays public to satisfy
+the AGPL's network-use clause, and the deployed site links back to it in the
+footer.
