@@ -42,6 +42,11 @@ export default function App() {
     setItems((prev) => prev.filter((i) => i.id !== id))
   }
 
+  function clearAll() {
+    setItems([])
+    setGlobalPassword('')
+  }
+
   function downloadOne(item: PdfItem) {
     if (item.resultBlob) saveAs(item.resultBlob, unlockedName(item.file.name))
   }
@@ -112,6 +117,13 @@ export default function App() {
                 />
                 Use the same password for all files
               </label>
+              <button
+                onClick={clearAll}
+                disabled={processing}
+                className="text-sm text-neutral-500 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Clear all
+              </button>
             </div>
 
             {samePassword && (
